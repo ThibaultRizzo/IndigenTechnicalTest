@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const http = require('http').Server(app);
-const port = 8000;
 const io = require('socket.io')(http);
 
 //Serve static files from the React app
@@ -38,4 +37,6 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/../client/build/index.html'));
 });
 
-http.listen(port, () => console.log(`Example app listening on port ${port}!`));
+http.listen(process.env.PORT || 8000, () =>
+  console.log(`Example app listening on port ${port}!`)
+);
