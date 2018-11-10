@@ -1,0 +1,21 @@
+.input-section {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+  width: 50%;
+  grid-area: input-section;
+  > * {
+    margin: 10px;
+  }
+  label {
+    font-family: Arial-Black, Helvetica, sans-serif;
+  }
+}
+
+.notification-input {
+  flex-grow: 1;
+}
+
+.notification-button {
+}

@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  height: 100vh;
+
+  display: grid;
+  grid-template-rows: [start-header] 15vh [end-header] 30vh [end-input-section] 45vh [last-line];
+  grid-template-columns: [start] 100vw [end];
+  grid-template-areas:
+    'header-section'
+    'input-section'
+    'output-section';
+
+  justify-items: center;
+  align-items: center;
+}
+
+.output {
+  grid-area: output-section;
+}

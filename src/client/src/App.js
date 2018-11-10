@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import AppRouter from './AppRouter';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="">
         <AppRouter />
       </div>
     );

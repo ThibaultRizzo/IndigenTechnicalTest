@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { emitNotification, disconnect } from '../socketApi';
-import ReceiverComponent from './ReceiverComponent';
+import { emitNotification } from '../socketApi';
+import './EmitterComponent.scss';
 
 export default class EmitterForm extends Component {
   state = {
@@ -31,17 +31,19 @@ export default class EmitterForm extends Component {
 
   render() {
     return (
-      <div className="App">
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            onChange={this.onInputChange}
-            value={this.state.notification}
-          />
-          <button type="submit">Send Notification</button>
-        </form>
-        <ReceiverComponent />
-      </div>
+      <form className="input-section" onSubmit={this.onSubmit}>
+        <label htmlFor="notification">Notify All Connected Users:</label>
+        <input
+          id="notification"
+          type="text"
+          className="notification-input"
+          onChange={this.onInputChange}
+          value={this.state.notification}
+        />
+        <button type="submit" className="notification-button">
+          Send
+        </button>
+      </form>
     );
   }
 }
