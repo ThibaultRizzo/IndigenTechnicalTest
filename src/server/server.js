@@ -1,20 +1,12 @@
-const app = require('express')();
+const express = require('express');
+const app = express();
+const path = require('path');
 const http = require('http').Server(app);
 const port = 8000;
 const io = require('socket.io')(http);
 
-// const messageRoutes = require('./routes/message.route');
-
-/*** Routings ***/
-
-// app.use('/message', messageRoutes);
-
-// Serve static files from the React app
-// app.use(express.static(path.join(__dirname, '../client/build')));
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+//Serve static files from the React app
+app.use(express.static(path.join(__dirname, '../client/build')));
 
 io.on('connection', client => {
   console.log('A new user has connected!');
